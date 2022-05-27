@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\roofp\\Desktop\\projektApp\\ProjektApp.Rest\\ProjektApp.Rest.csproj": {}
+    "C:\\Users\\roofp\\Desktop\\Azure\\WebAppProject\\projektApp\\ProjektApp.Rest\\ProjektApp.Rest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\roofp\\Desktop\\projektApp\\ProjektApp.Rest\\ProjektApp.Rest.csproj": {
+    "C:\\Users\\roofp\\Desktop\\Azure\\WebAppProject\\projektApp\\ProjektApp.Rest\\ProjektApp.Rest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\roofp\\Desktop\\projektApp\\ProjektApp.Rest\\ProjektApp.Rest.csproj",
+        "projectUniqueName": "C:\\Users\\roofp\\Desktop\\Azure\\WebAppProject\\projektApp\\ProjektApp.Rest\\ProjektApp.Rest.csproj",
         "projectName": "ProjektApp.Rest",
-        "projectPath": "C:\\Users\\roofp\\Desktop\\projektApp\\ProjektApp.Rest\\ProjektApp.Rest.csproj",
+        "projectPath": "C:\\Users\\roofp\\Desktop\\Azure\\WebAppProject\\projektApp\\ProjektApp.Rest\\ProjektApp.Rest.csproj",
         "packagesPath": "C:\\Users\\roofp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\roofp\\Desktop\\projektApp\\ProjektApp.Rest\\obj\\",
+        "outputPath": "C:\\Users\\roofp\\Desktop\\Azure\\WebAppProject\\projektApp\\ProjektApp.Rest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\roofp\\AppData\\Roaming\\NuGet\\NuGet.Config",

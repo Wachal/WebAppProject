@@ -12,7 +12,7 @@ using ProjektApp.Rest.Database;
 namespace ProjektApp.Rest.Migrations
 {
     [DbContext(typeof(PeopleDb))]
-    [Migration("20220526212548_Init")]
+    [Migration("20220527183219_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

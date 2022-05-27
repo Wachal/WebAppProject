@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lpEEa6nvPfNp5zizPyAD3rMv+SQDVE7nVLCD16KpCXxyp7rndq5fAbrLoZ0VtH6IbexFJsGZ+ZJHb9Qvw9wlEQ==",
+  "dgSpecHash": "bm+cfLJWTlmEZQ7QYvU1seGUNc0LJjuk2uPxjXx+AKCzZEHPJoZRDmNxUg7OKXMFxgOFsDj9/Ha6nrqvN++BNw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\roofp\\Desktop\\projektApp\\ProjektApp.Rest\\ProjektApp.Rest.csproj",
+  "projectFilePath": "C:\\Users\\roofp\\Desktop\\Azure\\WebAppProject\\projektApp\\ProjektApp.Rest\\ProjektApp.Rest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\roofp\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\roofp\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
