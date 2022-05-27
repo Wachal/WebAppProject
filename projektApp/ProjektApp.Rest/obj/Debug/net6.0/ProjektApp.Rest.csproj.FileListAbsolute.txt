@@ -120,5 +120,4 @@ C:\Users\roofp\Desktop\Azure\WebAppProject\projektApp\ProjektApp.Rest\obj\Debug\
 C:\Users\roofp\Desktop\Azure\WebAppProject\projektApp\ProjektApp.Rest\obj\Debug\net6.0\ProjektApp.Rest.csproj.CopyComplete
 C:\Users\roofp\Desktop\Azure\WebAppProject\projektApp\ProjektApp.Rest\obj\Debug\net6.0\ProjektApp.Rest.genruntimeconfig.cache
 C:\Users\roofp\Desktop\Azure\WebAppProject\projektApp\ProjektApp.Rest\obj\Debug\net6.0\ref\ProjektApp.Rest.dll
-C:\Users\roofp\Desktop\Azure\WebAppProject\projektApp\ProjektApp.Rest\obj\Debug\net6.0\ProjektApp.Rest.RazorAssemblyInfo.cache
-C:\Users\roofp\Desktop\Azure\WebAppProject\projektApp\ProjektApp.Rest\obj\Debug\net6.0\ProjektApp.Rest.RazorAssemblyInfo.cs
+C:\Users\roofp\Desktop\Azure\WebAppProject\projektApp\ProjektApp.Rest\bin\Debug\net6.0\Newtonsoft.Json.dll

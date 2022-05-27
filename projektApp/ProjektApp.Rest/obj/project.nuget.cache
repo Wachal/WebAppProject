@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bm+cfLJWTlmEZQ7QYvU1seGUNc0LJjuk2uPxjXx+AKCzZEHPJoZRDmNxUg7OKXMFxgOFsDj9/Ha6nrqvN++BNw==",
+  "dgSpecHash": "+NpVEjNoWJV7pei3zrLzlI7o87g7+HnCZ/fG6cYgzcRLajix53inTCeUlj/g+9+TMYs+bjPma92IP1xsA0Ut1w==",
   "success": true,
   "projectFilePath": "C:\\Users\\roofp\\Desktop\\Azure\\WebAppProject\\projektApp\\ProjektApp.Rest\\ProjektApp.Rest.csproj",
   "expectedPackageFiles": [
@@ -34,6 +34,7 @@
     "C:\\Users\\roofp\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\roofp\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\roofp\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\roofp\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\roofp\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\roofp\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\roofp\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

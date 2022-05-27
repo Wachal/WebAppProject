@@ -3,9 +3,6 @@ using ProjektApp.Rest.Database;
 using Microsoft.EntityFrameworkCore;
 using ProjektApp.Rest.Models;
 using ProjektApp.Rest.Database.Entities;
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjektApp.Rest.Controllers;
 
@@ -31,8 +28,7 @@ public class PeopleController : ControllerBase
     public async Task<IActionResult> Get()
     {
         var people = await db.People.ToListAsync();
-        return View();
-        
+        return Ok(people);
     }
 
     [HttpPost]

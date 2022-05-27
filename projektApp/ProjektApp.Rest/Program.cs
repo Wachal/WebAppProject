@@ -14,6 +14,8 @@ builder.Services.AddDbContext<PeopleDb>(options => {
     options.UseSqlServer(connectionString);
 });
 
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -28,9 +30,9 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 //testowanko
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+// app.MapControllerRoute(
+//     name: "default",
+//     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllers();
 
