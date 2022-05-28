@@ -1064,3 +1064,5 @@ C:\Users\Administrator\Desktop\cloud-computing\WebAppProject\projektApp\ProjektA
 C:\Users\Administrator\Desktop\cloud-computing\WebAppProject\projektApp\ProjektApp.Rest\obj\Release\net6.0\linux-x64\ref\ProjektApp.Rest.dll
 C:\Users\Administrator\Desktop\cloud-computing\WebAppProject\projektApp\ProjektApp.Rest\obj\Release\net6.0\linux-x64\ProjektApp.Rest.pdb
 C:\Users\Administrator\Desktop\cloud-computing\WebAppProject\projektApp\ProjektApp.Rest\obj\Release\net6.0\linux-x64\ProjektApp.Rest.genruntimeconfig.cache
+C:\Users\Administrator\Desktop\cloud-computing\WebAppProject\projektApp\ProjektApp.Rest\obj\Release\net6.0\linux-x64\ProjektApp.Rest.RazorAssemblyInfo.cache
+C:\Users\Administrator\Desktop\cloud-computing\WebAppProject\projektApp\ProjektApp.Rest\obj\Release\net6.0\linux-x64\ProjektApp.Rest.RazorAssemblyInfo.cs
