@@ -11,9 +11,14 @@ namespace ProjektApp.Rest.Controllers;
 public class HomeController : Controller
 {
 
-    public IActionResult About()
+    public IActionResult Index()
     {
-        return View();
+        // var html = System.IO.File.ReadAllText(@"./Views/Home/Index.html");
+        // return base.Content(html, "text/html");
+        return View("~/Views/Home/Index.cshtml");
     }
 
+   
+
 }
+
