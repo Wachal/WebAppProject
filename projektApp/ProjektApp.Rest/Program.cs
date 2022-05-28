@@ -9,7 +9,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<PeopleDb>(options => {
+builder.Services.AddDbContext<ProjectContext>(options => {
     var connectionString = builder.Configuration.GetConnectionString("projektdatabase");
     options.UseSqlServer(connectionString);
 });

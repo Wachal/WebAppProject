@@ -12,17 +12,12 @@ namespace ProjektApp.Rest.Controllers;
 public class PeopleController : ControllerBase
 {
 
-    private readonly PeopleDb db;
+    private readonly ProjectContext db;
 
-    public PeopleController(PeopleDb db)
+    public PeopleController(ProjectContext db)
     {
         this.db = db;
     }
-
-    // public IActionResult Index()
-    // {
-    //     return View();
-    // }
 
     [HttpGet]
     public async Task<IActionResult> Get()
@@ -45,4 +40,20 @@ public class PeopleController : ControllerBase
 
         return Ok();
     }
+
+    // [HttpPost]
+    // [Route("asdasd")]
+    // public async Task <IActionResult> Add([FromBody] CreateCardRequest request)
+    // {
+    //     if(!request.Validate())
+    //     {
+    //         throw new Exception("cos tam zle");
+    //     }
+
+    //     var CardEntity = new CardEntity(request.CardNumber);
+    //     db.CardEntries.Add(CardEntity);
+    //     await db.SaveChangesAsync();
+
+    //     return Ok();
+    // }
 }

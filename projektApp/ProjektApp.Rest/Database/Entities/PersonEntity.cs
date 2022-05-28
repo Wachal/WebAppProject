@@ -7,11 +7,11 @@ namespace ProjektApp.Rest.Database.Entities
             CreatedOn = DateTime.UtcNow;
         }
 
-        public PersonEntity(string firstName, string lastName, string phoneNumber)
+        public PersonEntity(string firstName, string lastName, string cardNumber)
         {
             FirstName = firstName;
             LastName = lastName;
-            PhoneNumber = phoneNumber;
+            CardNumber = cardNumber;
         }
 
         public int PersonId {get; protected set;}
@@ -20,7 +20,7 @@ namespace ProjektApp.Rest.Database.Entities
 
         public string LastName {get; protected set;}
 
-        public string PhoneNumber {get; protected set;}
+        public string CardNumber {get; protected set;}
 
         public DateTime CreatedOn {get; protected set;}
     }

@@ -2,18 +2,18 @@ using ProjektApp.Rest.Database.Entities;
 using Microsoft.EntityFrameworkCore;
 // using ProjektApp.Database.Entities;
 
-
-
 namespace ProjektApp.Rest.Database
 {
-    public class PeopleDb : DbContext
+    public class ProjectContext : DbContext
     {
-        public PeopleDb(DbContextOptions options) : base(options)
+        public ProjectContext(DbContextOptions options) : base(options)
         {
 
         }
 
         public DbSet<PersonEntity> People {get; protected set;}
+
+        public DbSet<CardEntity> CardEntries {get; protected set;}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -22,9 +22,10 @@ namespace ProjektApp.Rest.Database
             var perosnEntity = modelBuilder.Entity<PersonEntity>();
             perosnEntity.HasKey(pk=>pk.PersonId);
             perosnEntity.ToTable("Person");
-            perosnEntity.Property(p=>p.FirstName).HasMaxLength(250);
+
+            var CardEntity = modelBuilder.Entity<CardEntity>();
+            CardEntity.HasKey(pk=>pk.CardEntryId);
+            CardEntity.ToTable("CardEntries");
         }
-
-
     }
 }
