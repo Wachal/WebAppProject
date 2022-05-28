@@ -16,7 +16,7 @@ namespace projekt
             {
                 client.Headers[HttpRequestHeader.ContentType] = "application/json";
 
-                People odczyt = new People("Arek", code, "123123123");
+                CardEntrie odczyt = new CardEntrie(code);
 
                 var serializeOptions = new JsonSerializerOptions
                 {
@@ -25,7 +25,7 @@ namespace projekt
                 };
                 var data = JsonSerializer.Serialize(odczyt, serializeOptions);
 
-                var result = client.UploadString("https://a-t-cloudcomputing.azurewebsites.net/People/", "POST", data);
+                var result = client.UploadString("https://a-t-cloudcomputing.azurewebsites.net/CardEntries", "POST", data);
                 Console.WriteLine(result);
             }
             
