@@ -8,9 +8,13 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProjektApp.Rest
 build_property.RootNamespace = ProjektApp.Rest
-build_property.ProjectDir = C:\Users\roofp\Desktop\Azure\WebAppProject\projektApp\ProjektApp.Rest\
+build_property.ProjectDir = C:\Users\Administrator\Desktop\cloud-computing\WebAppProject\projektApp\ProjektApp.Rest\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\roofp\Desktop\Azure\WebAppProject\projektApp\ProjektApp.Rest
+build_property.MSBuildProjectDirectory = C:\Users\Administrator\Desktop\cloud-computing\WebAppProject\projektApp\ProjektApp.Rest
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Administrator/Desktop/cloud-computing/WebAppProject/projektApp/ProjektApp.Rest/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
