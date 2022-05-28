@@ -3,6 +3,8 @@ using ProjektApp.Rest.Database;
 using Microsoft.EntityFrameworkCore;
 using ProjektApp.Rest.Models;
 using ProjektApp.Rest.Database.Entities;
+using System.Text.Json;
+
 
 namespace ProjektApp.Rest.Controllers;
 
@@ -11,14 +13,27 @@ namespace ProjektApp.Rest.Controllers;
 public class HomeController : Controller
 {
 
-    public IActionResult Index()
+    private readonly ProjectContext db;
+
+    public HomeController(ProjectContext db)
     {
-        // var html = System.IO.File.ReadAllText(@"./Views/Home/Index.html");
-        // return base.Content(html, "text/html");
-        return View("~/Views/Home/Index.cshtml");
+        this.db = db;
     }
 
-   
+    public IActionResult Index()
+    {
 
+        var CardEntries =  db.CardEntries.ToList();
+
+        var Entries = new List<string>();
+
+       foreach(var tak in CardEntries)
+       {
+           Entries.Add(tak.CardEntryId + " " + tak.CardNumber + " " + tak.CreatedOn);
+       }
+
+        ViewBag.Wejscia = Entries;
+        return View();
+    }
 }
 
