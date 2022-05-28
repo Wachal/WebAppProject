@@ -15,6 +15,8 @@ namespace projekt
         {
             Console.WriteLine("Hello World!");
 
+            ApiController.callApi("OdczytanyKodKarty");
+
             string GetCardId(Data106kbpsTypeA card) => Convert.ToHexString(card.NfcId);
 
             GpioController gpioController = new GpioController();
