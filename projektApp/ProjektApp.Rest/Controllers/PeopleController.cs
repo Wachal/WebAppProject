@@ -40,20 +40,4 @@ public class PeopleController : ControllerBase
 
         return Ok();
     }
-
-    // [HttpPost]
-    // [Route("asdasd")]
-    // public async Task <IActionResult> Add([FromBody] CreateCardRequest request)
-    // {
-    //     if(!request.Validate())
-    //     {
-    //         throw new Exception("cos tam zle");
-    //     }
-
-    //     var CardEntity = new CardEntity(request.CardNumber);
-    //     db.CardEntries.Add(CardEntity);
-    //     await db.SaveChangesAsync();
-
-    //     return Ok();
-    // }
 }
