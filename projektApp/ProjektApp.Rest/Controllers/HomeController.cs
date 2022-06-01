@@ -33,7 +33,26 @@ public class HomeController : Controller
        }
 
         ViewBag.Wejscia = Entries;
+
+        var timeEntriesList = db.CardTimes.FromSqlRaw(
+            @"SELECT
+            CardNumber, 
+            SUM(timeDifference) AS TimeInSeconds 
+        FROM(
+            SELECT 
+                CardNumber, 
+                CreatedOn, 
+                DATEDIFF(second, LAG(CreatedOn) OVER(PARTITION BY CardNumber ORDER BY CreatedOn), CreatedOn) AS timeDifference,
+                ROW_NUMBER() OVER(PARTITION BY [CardNumber] ORDER BY [CreatedOn]) AS rowNumberForCard
+            FROM [dbo].[CardEntries]
+        ) AS CalucateTimeDiff
+        WHERE rowNumberForCard%2=0
+        GROUP BY CardNumber"
+        ).ToList();
+
+        ViewBag.TimeEntries = timeEntriesList;
+
         return View();
     }
-}
 
+}

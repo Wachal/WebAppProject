@@ -15,6 +15,8 @@ namespace ProjektApp.Rest.Database
 
         public DbSet<CardEntity> CardEntries {get; protected set;}
 
+        public DbSet<CardTimesEntity> CardTimes { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -26,6 +28,10 @@ namespace ProjektApp.Rest.Database
             var CardEntity = modelBuilder.Entity<CardEntity>();
             CardEntity.HasKey(pk=>pk.CardEntryId);
             CardEntity.ToTable("CardEntries");
+
+            var CardTimes = modelBuilder.Entity<CardTimesEntity>();
+            CardTimes.HasNoKey();
+
         }
     }
 }
