@@ -14,13 +14,22 @@ namespace projekt
         public static async Task Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            var isWorking = false;
 
-            ApiController.callApi("OdczytanyKodKarty");
+            ApiController.callApi("OdczytanyKodKarty", isWorking);
 
             string GetCardId(Data106kbpsTypeA card) => Convert.ToHexString(card.NfcId);
 
             GpioController gpioController = new GpioController();
             int pinReset = 21;
+
+            int LED_PIN_first = 18;
+            int LED_PIN_startWork = 19;
+            int LED_PIN_endWork = 20;
+
+            gpioController.OpenPin(LED_PIN_first, PinMode.Output);
+            gpioController.OpenPin(LED_PIN_startWork, PinMode.Output);
+            gpioController.OpenPin(LED_PIN_endWork, PinMode.Output);
 
             SpiConnectionSettings connection = new(0, 0);
             connection.ClockFrequency = 10_000_000;
@@ -63,6 +72,28 @@ namespace projekt
                             {
                                 var cardId = GetCardId(card);
                                 Console.WriteLine(cardId);
+
+                                //migniecie led przy odczycie karty
+                                gpioController.Write(LED_PIN_first, true);
+                                Thread.Sleep(1000);
+                                gpioController.Write(LED_PIN_first, false);
+
+                                if(!isWorking){
+                                    isWorking = !isWorking;
+                                    //zaczecie pracy dioda
+                                    gpioController.Write(LED_PIN_startWork, true);
+                                    Thread.Sleep(1000);
+                                    gpioController.Write(LED_PIN_startWork, false);
+                                    //ApiController.callApi(cardId, isWorking);
+
+                                }else{
+                                    isWorking = !isWorking;
+                                    //zakonczenie pracy
+                                    gpioController.Write(LED_PIN_endWork, true);
+                                    Thread.Sleep(1000);
+                                    gpioController.Write(LED_PIN_endWork, false);
+                                    //ApiController.callApi(cardId, isWorking);
+                                }
                             }
                         }
 
