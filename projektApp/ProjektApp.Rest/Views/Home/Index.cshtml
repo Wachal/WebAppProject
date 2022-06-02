@@ -1,18 +1,12 @@
-@{
-    <!-- ViewData["Title"] = "About"; -->
-    ViewBag.Title = "Index";
-}
-<h3>@ViewData["Message"]</h3>
 
-<p>Use this area to provide additional information.</p>
 
-<p>@ViewBag.Title</p>
+<p>Odbicia kart:</p>
 
 <ul>
-@foreach (var a in ViewBag.Wejscia)
+@foreach (var entry in ViewBag.Entries)
 {
   <li>
-    @a
+    @entry
   </li>
 }
 </ul>
@@ -36,6 +30,12 @@ Podsumowanie czasu pracy:
 </ul>
 
 <style>
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 table {
     border: solid 1px #DDEEEE;
     border-collapse: collapse;

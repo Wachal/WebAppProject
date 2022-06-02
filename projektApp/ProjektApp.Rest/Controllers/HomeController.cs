@@ -27,12 +27,12 @@ public class HomeController : Controller
 
         var Entries = new List<string>();
 
-       foreach(var tak in CardEntries)
+       foreach(var card in CardEntries)
        {
-           Entries.Add(tak.CardEntryId + " " + tak.CardNumber + " " + tak.CreatedOn);
+           Entries.Add(card.CardEntryId + " " + card.CardNumber + " " + card.CreatedOn);
        }
 
-        ViewBag.Wejscia = Entries;
+        ViewBag.Entries = Entries;
 
         var timeEntriesList = db.CardTimes.FromSqlRaw(
             @"SELECT
