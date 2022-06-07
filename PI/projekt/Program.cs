@@ -14,9 +14,8 @@ namespace projekt
         public static async Task Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            var isWorking = false;
 
-            ApiController.callApi("OdczytanyKodKarty", isWorking);
+            ApiController.callApi("OdczytanyKodKarty");
 
             string GetCardId(Data106kbpsTypeA card) => Convert.ToHexString(card.NfcId);
 
@@ -77,6 +76,8 @@ namespace projekt
                                 gpioController.Write(LED_PIN_first, true);
                                 Thread.Sleep(1000);
                                 gpioController.Write(LED_PIN_first, false);
+
+                                var isWorking = true;
 
                                 if(!isWorking){
                                     isWorking = !isWorking;

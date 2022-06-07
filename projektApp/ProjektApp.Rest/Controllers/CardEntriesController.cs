@@ -31,13 +31,31 @@ public class CardEntriesController : ControllerBase
     {
         if(!request.Validate())
         {
-            throw new Exception("cos tam zle");
+            throw new Exception("Błąd");
         }
 
+        //Find is readed cardNumber added as a user
+        var person = db.People.Find(request.CardNumber);
+        if (person is null)
+        {
+            return NotFound();
+        }
+        
+        //Send request of readed card to API
         var CardEntity = new CardEntity(request.CardNumber);
         db.CardEntries.Add(CardEntity);
         await db.SaveChangesAsync();
 
-        return Ok();
+        //Determine if Person was working or not
+        //and change working status based on previous status
+        if(person.IsWorking)
+            person.IsWorking = false;
+        else if(person.IsWorking == false)
+            person.IsWorking = true;
+
+        //Save changes on person entity
+        db.SaveChanges();
+        
+        return Ok(person);
     }
 }

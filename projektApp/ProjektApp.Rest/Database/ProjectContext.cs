@@ -22,7 +22,7 @@ namespace ProjektApp.Rest.Database
             base.OnModelCreating(modelBuilder);
 
             var perosnEntity = modelBuilder.Entity<PersonEntity>();
-            perosnEntity.HasKey(pk=>pk.PersonId);
+            perosnEntity.HasKey(pk=>pk.CardNumber);
             perosnEntity.ToTable("Person");
 
             var CardEntity = modelBuilder.Entity<CardEntity>();

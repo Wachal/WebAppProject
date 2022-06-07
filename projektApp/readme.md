@@ -29,6 +29,15 @@ Wpisy kart
 }
 ```
 
+Dodanie/pobranie użytkownika
+```
+{
+    "FirstName": "Jan",
+    "LastName": "Kowalski", 
+    "CardNumber": "NumerKartyDwa"
+}
+```
+
 Użytkownicy
 * GET/POST
 https://localhost:7234/People

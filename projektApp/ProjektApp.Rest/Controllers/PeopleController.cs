@@ -31,10 +31,10 @@ public class PeopleController : ControllerBase
     {
         if(!request.Validate())
         {
-            throw new Exception("cos tam zle");
+            throw new Exception("Błąd");
         }
 
-        var personEntity = new PersonEntity(request.FirstName, request.LastName, request.PhoneNumber);
+        var personEntity = new PersonEntity(request.FirstName, request.LastName, request.CardNumber, false);
         db.People.Add(personEntity);
         await db.SaveChangesAsync();
 

@@ -8,7 +8,7 @@ namespace projekt
 {
     class ApiController
     {
-        public static bool callApi(string code, bool isWorking){
+        public static bool callApi(string code){
             Console.WriteLine(code);
 
             
@@ -16,7 +16,7 @@ namespace projekt
             {
                 client.Headers[HttpRequestHeader.ContentType] = "application/json";
 
-                CardEntrie odczyt = new CardEntrie(code, isWorking);
+                CardEntrie odczyt = new CardEntrie(code);
 
                 var serializeOptions = new JsonSerializerOptions
                 {
@@ -26,7 +26,7 @@ namespace projekt
                 var data = JsonSerializer.Serialize(odczyt, serializeOptions);
 
                 // var result = client.UploadString("https://a-t-cloudcomputing.azurewebsites.net/CardEntries", "POST", data);
-                 var result = client.UploadString("https://localhost:7234/CardEntries", "POST", data);
+                var result = client.UploadString("http://localhost:7234/CardEntries", "POST", data);
                 Console.WriteLine(result);
             }
             
