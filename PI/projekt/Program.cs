@@ -15,8 +15,6 @@ namespace projekt
         {
             Console.WriteLine("Hello World!");
 
-            ApiController.callApi("OdczytanyKodKarty");
-
             string GetCardId(Data106kbpsTypeA card) => Convert.ToHexString(card.NfcId);
 
             GpioController gpioController = new GpioController();
@@ -77,7 +75,8 @@ namespace projekt
                                 Thread.Sleep(1000);
                                 gpioController.Write(LED_PIN_first, false);
 
-                                var isWorking = true;
+                                //Send API Request. Method return true if work started and false if work ended
+                                var isWorking = ApiController.callApi("OdczytanyKodKarty");
 
                                 if(!isWorking){
                                     isWorking = !isWorking;

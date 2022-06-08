@@ -8,14 +8,20 @@ Utworzenie migracji
 ```
 dotnet ef migrations add InitialCreate
 ```
+
 Utworzenie bazy danych i schematu
 ```
 dotnet ef database update
 ```
-```
+
 Uruchomienie projektu
 ```
 dotnet run
+```
+
+Opublikowanie projektu
+```
+dotnet publish -c Release -r linux-x64 -o publish
 ```
 
 Przykładowe zapytania

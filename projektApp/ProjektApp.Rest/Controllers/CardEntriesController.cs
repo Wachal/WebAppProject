@@ -38,7 +38,11 @@ public class CardEntriesController : ControllerBase
         var person = db.People.Find(request.CardNumber);
         if (person is null)
         {
-            return NotFound();
+            var personToCreate = new PersonEntity("Imię", "Nazwisko", request.CardNumber, false);
+            db.People.Add(personToCreate);
+            db.SaveChanges();
+
+            person = personToCreate;
         }
         
         //Send request of readed card to API

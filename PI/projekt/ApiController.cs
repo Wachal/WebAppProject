@@ -8,9 +8,9 @@ namespace projekt
 {
     class ApiController
     {
+
         public static bool callApi(string code){
             Console.WriteLine(code);
-
             
             using (var client = new WebClient())
             {
@@ -25,13 +25,15 @@ namespace projekt
                 };
                 var data = JsonSerializer.Serialize(odczyt, serializeOptions);
 
-                // var result = client.UploadString("https://a-t-cloudcomputing.azurewebsites.net/CardEntries", "POST", data);
-                var result = client.UploadString("http://localhost:7234/CardEntries", "POST", data);
-                Console.WriteLine(result);
+                var response = client.UploadString("https://atcloudcomputing.azurewebsites.net/CardEntries", "POST", data);
+
+                People? person = JsonSerializer.Deserialize<People>(response);
+
+                return person.isWorking;
             }
             
-            return true;
         }
+
     }
 }
 

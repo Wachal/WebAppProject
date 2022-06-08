@@ -1,15 +1,4 @@
 
-
-<p>Odbicia kart:</p>
-
-<ul>
-@foreach (var entry in ViewBag.Entries)
-{
-  <li>
-    @entry
-  </li>
-}
-</ul>
 Podsumowanie czasu pracy:
 <table>
   <tr>
@@ -24,9 +13,15 @@ Podsumowanie czasu pracy:
   </tr>
   }
 </table>
+<p>Odbicia kart:</p>
+
 <ul>
-
-
+@foreach (var entry in ViewBag.Entries)
+{
+  <li>
+    @entry
+  </li>
+}
 </ul>
 
 <style>
