@@ -17,20 +17,21 @@ namespace projekt
 
             string GetCardId(Data106kbpsTypeA card) => Convert.ToHexString(card.NfcId);
 
+
             GpioController gpioController = new GpioController();
             int pinReset = 21;
 
-            int LED_PIN_first = 18;
-            int LED_PIN_startWork = 19;
-            int LED_PIN_endWork = 20;
+            const int LED_PIN_RED = 18;
+            //const int LED_PIN_YELLOW = 37;
+            //const int LED_PIN_GREEN = 37;
 
-            gpioController.OpenPin(LED_PIN_first, PinMode.Output);
-            gpioController.OpenPin(LED_PIN_startWork, PinMode.Output);
-            gpioController.OpenPin(LED_PIN_endWork, PinMode.Output);
+            gpioController.OpenPin(LED_PIN_RED, PinMode.Output);
+            //gpioController.OpenPin(LED_PIN_YELLOW, PinMode.Output);
+            //gpioController.OpenPin(LED_PIN_GREEN, PinMode.Output);
+            
 
             SpiConnectionSettings connection = new(0, 0);
             connection.ClockFrequency = 10_000_000;
-
 
             var source = new CancellationTokenSource();
             var token = source.Token;
@@ -67,24 +68,29 @@ namespace projekt
 
                             if (res)
                             {
+
+                                gpioController.Write(LED_PIN_RED, PinValue.High);
+                                //gpioController.Write(LED_PIN_YELLOW, PinValue.High);
+                               // gpioController.Write(LED_PIN_GREEN, PinValue.High);
+
                                 var cardId = GetCardId(card);
                                 Console.WriteLine(cardId);
 
+                                 //Send API Request. Method return true if work started and false if work ended
+                                var isWorking = ApiController.callApi(cardId);
+
                                 //migniecie led przy odczycie karty
-                                gpioController.Write(LED_PIN_first, true);
-                                Thread.Sleep(1000);
-                                gpioController.Write(LED_PIN_first, false);
+                                //gpioController.Write(LED_PIN_first, true);
+                                //Thread.Sleep(1000);
+                                //gpioController.Write(LED_PIN_first, false);
 
-                                //Send API Request. Method return true if work started and false if work ended
-                                var isWorking = ApiController.callApi("OdczytanyKodKarty");
-
+                                /*
                                 if(!isWorking){
                                     isWorking = !isWorking;
                                     //zaczecie pracy dioda
                                     gpioController.Write(LED_PIN_startWork, true);
                                     Thread.Sleep(1000);
                                     gpioController.Write(LED_PIN_startWork, false);
-                                    //ApiController.callApi(cardId, isWorking);
 
                                 }else{
                                     isWorking = !isWorking;
@@ -92,8 +98,8 @@ namespace projekt
                                     gpioController.Write(LED_PIN_endWork, true);
                                     Thread.Sleep(1000);
                                     gpioController.Write(LED_PIN_endWork, false);
-                                    //ApiController.callApi(cardId, isWorking);
                                 }
+                                */
                             }
                         }
 
@@ -111,5 +117,3 @@ namespace projekt
         }
     }
 }
-
-
