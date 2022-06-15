@@ -22,12 +22,12 @@ namespace projekt
             int pinReset = 21;
 
             const int LED_PIN_RED = 18;
-            //const int LED_PIN_YELLOW = 37;
-            //const int LED_PIN_GREEN = 37;
+            const int LED_PIN_YELLOW = 14;
+            const int LED_PIN_GREEN = 15;
 
             gpioController.OpenPin(LED_PIN_RED, PinMode.Output);
-            //gpioController.OpenPin(LED_PIN_YELLOW, PinMode.Output);
-            //gpioController.OpenPin(LED_PIN_GREEN, PinMode.Output);
+            gpioController.OpenPin(LED_PIN_YELLOW, PinMode.Output);
+            gpioController.OpenPin(LED_PIN_GREEN, PinMode.Output);
             
 
             SpiConnectionSettings connection = new(0, 0);
@@ -68,38 +68,31 @@ namespace projekt
 
                             if (res)
                             {
-
-                                gpioController.Write(LED_PIN_RED, PinValue.High);
-                                //gpioController.Write(LED_PIN_YELLOW, PinValue.High);
-                               // gpioController.Write(LED_PIN_GREEN, PinValue.High);
+                                //migniecie led przy odczycie karty
+                                gpioController.Write(LED_PIN_YELLOW, PinValue.High);
+                                Thread.Sleep(1000);
+                                gpioController.Write(LED_PIN_YELLOW, PinValue.Low);
 
                                 var cardId = GetCardId(card);
-                                Console.WriteLine(cardId);
+                                //Console.WriteLine(cardId);
 
-                                 //Send API Request. Method return true if work started and false if work ended
+                                //Send API Request. Method return true if work started and false if work ended
                                 var isWorking = ApiController.callApi(cardId);
 
-                                //migniecie led przy odczycie karty
-                                //gpioController.Write(LED_PIN_first, true);
-                                //Thread.Sleep(1000);
-                                //gpioController.Write(LED_PIN_first, false);
-
-                                /*
-                                if(!isWorking){
-                                    isWorking = !isWorking;
+                                
+                                if(isWorking){
                                     //zaczecie pracy dioda
-                                    gpioController.Write(LED_PIN_startWork, true);
+                                    gpioController.Write(LED_PIN_GREEN, PinValue.High);
                                     Thread.Sleep(1000);
-                                    gpioController.Write(LED_PIN_startWork, false);
+                                    gpioController.Write(LED_PIN_GREEN, PinValue.Low);
 
                                 }else{
-                                    isWorking = !isWorking;
                                     //zakonczenie pracy
-                                    gpioController.Write(LED_PIN_endWork, true);
+                                    gpioController.Write(LED_PIN_RED, PinValue.High);
                                     Thread.Sleep(1000);
-                                    gpioController.Write(LED_PIN_endWork, false);
+                                    gpioController.Write(LED_PIN_RED, PinValue.Low);
                                 }
-                                */
+                                
                             }
                         }
 
@@ -113,6 +106,10 @@ namespace projekt
                 } while (active);
 
                 Console.WriteLine("Task done.");
+
+                gpioController.Write(LED_PIN_RED, PinValue.Low);
+                gpioController.Write(LED_PIN_YELLOW, PinValue.Low);
+                gpioController.Write(LED_PIN_GREEN, PinValue.Low);
             }
         }
     }
