@@ -36,18 +36,25 @@ public class HomeController : Controller
 
         var timeEntriesList = db.CardTimes.FromSqlRaw(
             @"SELECT
-            CardNumber, 
-            SUM(timeDifference) AS TimeInSeconds 
+            FirstName,
+			LastName,
+			CardNumber, 
+            SUM(timeDifference) AS TimeInSeconds,
+			SUM(timeDifferenceMin) AS TimeInMins,
+			SUM(timeDifferenceHour) as TimeInHours
         FROM(
             SELECT 
-                CardNumber, 
+                CardNumber AS CardNumber1, 
                 CreatedOn, 
                 DATEDIFF(second, LAG(CreatedOn) OVER(PARTITION BY CardNumber ORDER BY CreatedOn), CreatedOn) AS timeDifference,
+				DATEDIFF(minute, LAG(CreatedOn) OVER(PARTITION BY CardNumber ORDER BY CreatedOn), CreatedOn) AS timeDifferenceMin,
+				DATEDIFF(hour, LAG(CreatedOn) OVER(PARTITION BY CardNumber ORDER BY CreatedOn), CreatedOn) AS timeDifferenceHour,
                 ROW_NUMBER() OVER(PARTITION BY [CardNumber] ORDER BY [CreatedOn]) AS rowNumberForCard
             FROM [dbo].[CardEntries]
         ) AS CalucateTimeDiff
+		INNER JOIN [dbo].[Person] ON (Person.CardNumber = CardNumber1)
         WHERE rowNumberForCard%2=0
-        GROUP BY CardNumber"
+        GROUP BY CardNumber, FirstName, LastName"
         ).ToList();
 
         ViewBag.TimeEntries = timeEntriesList;

@@ -1,4 +1,4 @@
-Uruchomienie
+#Uruchomienie aplikacji
 
 Przejście do katalogu
 ```
@@ -24,11 +24,11 @@ Opublikowanie projektu
 dotnet publish -c Release -r linux-x64 -o publish
 ```
 
-Przykładowe zapytania
+#Przykładowe zapytania API
 
 Wpisy kart
 * GET - https://localhost:7234/CardEntries
-* POST -https://localhost:7234/CardEntries
+* POST - https://localhost:7234/CardEntries
 ```
 {
     "cardNumber": "IdKarty"
@@ -44,6 +44,12 @@ Dodanie/pobranie użytkownika
 }
 ```
 
+#Endpointy/strony
+
 Użytkownicy
 * GET/POST
 https://localhost:7234/People
+https://localhost:7234/CardEntries
+
+Strona główna aplikacji
+https://localhost:7234/Home

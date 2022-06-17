@@ -1,35 +1,42 @@
 
-Podsumowanie czasu pracy:
+<h1>Podsumowanie czasu pracy</h1>
 <table>
   <tr>
+    <th colspan="3">Dane pracownika</th>
+    <th colspan="3">Sumaryczny czas w</th>
+  </tr>
+  <tr>
+    <th>Imię</th>
+    <th>Nazwisko</th>
     <th>Numer karty</th>
-    <th>Suma sekund</th>
+    <th>Sekundach</th>
+    <th>Minutach</th>
+    <th>Godzinach</th>
   </tr>
   @foreach (var item in ViewBag.TimeEntries)
   {
   <tr>
+      <td>@item.FirstName</td>
+      <td>@item.LastName</td>
       <td>@item.CardNumber</td>
       <td>@item.TimeInSeconds</td>
+      <td>@item.TimeInMins</td>
+      <td>@item.TimeInHours</td>
   </tr>
   }
 </table>
-<p>Odbicia kart:</p>
-
-<ul>
-@foreach (var entry in ViewBag.Entries)
-{
-  <li>
-    @entry
-  </li>
-}
-</ul>
 
 <style>
+  h1{
+    margin-bottom:25px;
+    font-weight: 300;;
+  }
 body{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  font-family: Calibri, Arial;;
 }
 table {
     border: solid 1px #DDEEEE;
@@ -37,12 +44,15 @@ table {
     border-spacing: 0;
     font: normal 13px Arial, sans-serif;
 }
-table thead th {
-    background-color: #DDEFEF;
+table tr{
+  border: solid 1px #DDEEEE;
+}
+table th {
+    background-color: #f4f4f4;
     border: solid 1px #DDEEEE;
-    color: #336B6B;
+    color:#1c4545;
     padding: 10px;
-    text-align: left;
+    text-align: center;
     text-shadow: 1px 1px 1px #fff;
 }
 table tbody td {
